@@ -13,6 +13,19 @@ class product{
 			echo 'erreur' . $ex->getMessage();
 		}
 	}
+    static public function getuserproduct($data){
+		$id = $data['id'];
+		try{
+			$query = 'SELECT * FROM product WHERE id_seller=:id';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->bindParam(':id',$id);
+			$stmt->execute();
+			$employe = $stmt->fetchAll();
+			return $employe;
+		}catch(PDOException $ex){
+			echo 'erreur' . $ex->getMessage();
+		}
+	}
 
    static public function getallproduct(){
         $con= DB::connect()->prepare('SELECT * FROM product');
@@ -20,10 +33,11 @@ class product{
         return $con->fetchAll();
    } 
    static public function addproduct($data){
-    $con= DB::connect()->prepare('INSERT INTO product (name,price,date) VALUES (:name,:price,:date)');
+    $con= DB::connect()->prepare('INSERT INTO product (name,price,description,id_seller) VALUES (:name,:price,:desc,:seller)');
     $con->bindParam(':name',$data['name']); 
     $con->bindParam(':price',$data['price']); 
-    $con->bindParam(':date',$data['date']); 
+    $con->bindParam(':desc',$data['desc']); 
+    $con->bindParam(':seller',$data['seller']); 
      if($con->execute()){
          return 'ok';
      }else{
@@ -34,11 +48,11 @@ class product{
    }
 
    static public function updateproduct($data){
-    $con= DB::connect()->prepare('UPDATE product SET name=:name, price=:price, date=:date WHERE id=:id');
+    $con= DB::connect()->prepare('UPDATE product SET name=:name, price=:price, description=:desc WHERE id=:id');
     $con->bindParam(':id',$data['id']); 
     $con->bindParam(':name',$data['name']); 
     $con->bindParam(':price',$data['price']); 
-    $con->bindParam(':date',$data['date']); 
+    $con->bindParam(':desc',$data['desc']); 
      if($con->execute())
      {
          return 'ok';
@@ -63,7 +77,7 @@ class product{
         static public function searchproduct($data){
             $search = $data['search'];
             try{
-                $query = 'SELECT * FROM product WHERE name LIKE ? OR price LIKE ?';
+                $query = 'SELECT * FROM product WHERE name LIKE ? OR description LIKE ?';
                 $con = DB::connect()->prepare($query);
                 $con->execute(array('%'.$search.'%','%'.$search.'%'));
                 $client = $con->fetchAll();

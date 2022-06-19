@@ -9,6 +9,15 @@ class productController{
 			return $client;
 		}
 	}
+    public function getuserproduct(){
+		if(isset($_SESSION['userid'])){
+			$data = array(
+				'id' =>$_SESSION['userid']
+			);
+			$client = product::getuserproduct($data);
+			return $client;
+		}
+	}
     public function getAllproducts(){
         $client= product::getAllproduct();
         return $client;
@@ -18,7 +27,8 @@ class productController{
             $data= array(
                 'name'=>$_POST['name'],
                 'price'=>$_POST['price'],
-                'date'=>$_POST['date'],
+                'desc'=>$_POST['desc'],
+                'seller'=>$_POST['seller'],
             );
             $result= product::addproduct($data);
             if($result === 'ok'){
@@ -36,7 +46,7 @@ class productController{
                 'id'=>$_POST['id'],
                 'name'=>$_POST['name'],
                 'price'=>$_POST['price'],
-                'date'=>$_POST['date'],
+                'desc'=>$_POST['desc'],
             );
             $result= product::updateproduct($data);
             if($result === 'ok'){

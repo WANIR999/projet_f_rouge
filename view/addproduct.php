@@ -10,7 +10,7 @@
 			<div class="card">
 				<div class="card-header">Add  product</div>
 				<div class="card-body bg-light">
-					<a href="<?php echo BASE_URL;?>displayproduct" class="btn btn-sm btn-secondary mr-2 mb-2">
+					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
 					<form method="post">
@@ -20,12 +20,12 @@
 						</div>
 						<div class="form-group">
 							<label for="depart">price*</label>
-							<input type="text" name="price" class="form-control" placeholder="password">
+							<input type="text" name="price" class="form-control" placeholder="price">
 						</div>
-							<input type="hidden" name="seller" value="" class="form-control" placeholder="password">
+							<input type="hidden" name="seller" value="<?php echo $_SESSION['userid'];?>" class="form-control" placeholder="password">
 						<div class="form-group">
-							<label for="depart">date*</label>
-							<input type="date" name="date" class="form-control" placeholder="password">
+							<label for="depart">description*</label>
+							<input type="text" name="desc" class="form-control" placeholder="description">
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">add</button>

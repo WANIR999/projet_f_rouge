@@ -1,0 +1,219 @@
+::-webkit-scrollbar{
+    width: 1px;
+}
+
+@media only screen and (max-width:650px){
+    body{
+        width: 100%;
+    }
+
+    .tocol{
+        flex-direction: column !important;
+    }
+    .torow{
+        flex-direction: row !important;
+        height: auto !important;
+    }
+    .torow2{
+        flex-direction: row !important;
+        height: auto !important;
+        justify-content: space-around !important;
+    }
+    .sidebar{
+        width: 95% !important;
+        height: 50px !important;
+        flex-direction: row !important;
+        margin: 0px auto 0px auto !important;
+        align-items: center;
+        justify-content: space-around !important;
+    }
+    .plusw{
+        width: 50%;
+    }
+    .mmarg{
+        margin: 0px !important;
+    }
+    .maxw{
+        width: 100% !important;
+    }
+    .maxw2{
+        width: 90% !important;
+    }
+    .remove{
+        display: none !important;
+    }
+    .hello{
+        height: 80px !important;
+        margin:10px 0px 5px 0px !important;
+    }
+    .mmt{
+        margin-top: 10px !important;
+    }
+    .nbrd{
+        border: none !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
+    .mdl{
+        margin:0px auto 0px auto !important;
+    }
+    .noheight{
+        height: auto !important;
+    }
+    .mrgb{
+        margin-bottom:25px !important;
+    }
+    .widthmed{
+        width: 45% !important;
+    }
+    .font{
+        font-size: 15px !important;
+    }
+     .hei{
+        height:80px !important;
+     }
+
+     
+}
+@media only screen and (min-width:650px) and  (max-width:900px) {
+    body{
+        width: 100%;
+    }
+
+    .tocol{
+        flex-direction: column !important;
+    }
+    .torow{
+        flex-direction: row !important;
+        height: auto !important;
+    }
+    .torow2{
+        flex-direction: row !important;
+        height: auto !important;
+        justify-content: space-around !important;
+    }
+    .sidebar{
+        width: 95% !important;
+        height: 50px !important;
+        flex-direction: row !important;
+        margin: 0px auto 0px auto !important;
+        align-items: center;
+        justify-content: space-around !important;
+    }
+    .plusw{
+        width: 50%;
+    }
+    .mmarg{
+        margin: 0px !important;
+    }
+    .maxw{
+        width: 100% !important;
+    }
+    .remove{
+        display: none !important;
+    }
+    .hello{
+        height: 80px !important;
+        margin:10px 0px 5px 0px !important;
+    }
+    .mmt{
+        margin-top: 10px !important;
+    }
+    .nbrd{
+        border: none !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
+    .mdl{
+        margin:0px auto 0px auto !important;
+    }
+    .noheight{
+        height: auto !important;
+    }
+    .mrgb{
+        margin-bottom:25px !important;
+    }
+    .widthmed{
+        width: 45% !important;
+    }
+    .font{
+        font-size: 15px !important;
+    }
+     .hei{
+        height:80px !important;
+     }
+
+     
+}
+@media only screen and (min-width:900px) and  (max-width:1200px) {
+    body{
+        width: 100%;
+    }
+
+    .tocol{
+        flex-direction: column !important;
+    }
+    .torow{
+        flex-direction: row !important;
+        height: auto !important;
+    }
+    .torow2{
+        flex-direction: row !important;
+        height: auto !important;
+        justify-content: space-around !important;
+    }
+    .sidebar{
+        width: 95% !important;
+        height: 50px !important;
+        flex-direction: row !important;
+        margin: 0px auto 0px auto !important;
+        align-items: center;
+        justify-content: space-around !important;
+    }
+    .plusw{
+        width: 50%;
+    }
+    .mmarg{
+        margin: 0px !important;
+    }
+    .maxw{
+        width: 100% !important;
+    }
+    .remove{
+        display: none !important;
+    }
+    .hello{
+        height: 80px !important;
+        margin:10px 0px 5px 0px !important;
+    }
+    .mmt{
+        margin-top: 10px !important;
+    }
+    .nbrd{
+        border: none !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
+    .mdl{
+        margin:0px auto 0px auto !important;
+    }
+    .noheight{
+        height: auto !important;
+    }
+    .mrgb{
+        margin-bottom:25px !important;
+    }
+    .widthmedi{
+        width: 42% !important;
+    }
+    .widthsm{
+        width: 42% !important;
+    }
+    .font{
+        font-size: 25px !important;
+    }
+     .hei{
+        height:120px !important;
+     }
+     
+}

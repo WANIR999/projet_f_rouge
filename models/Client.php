@@ -13,6 +13,41 @@ class Client{
 			echo 'erreur' . $ex->getMessage();
 		}
 	}
+    static public function getseller(){
+		// $id = $data['id'];
+		// try{
+			$query = 'SELECT * FROM client WHERE role=0';
+			$stmt = DB::connect();
+            $con=$stmt->query($query);
+			$employe = $con->fetchAll();
+			return $employe;
+		// }catch(PDOException $ex){
+		// 	echo 'erreur' . $ex->getMessage();
+		// }
+	}
+    static public function getbuyer(){
+		// $id = $data['id'];
+		// try{
+			$query = 'SELECT * FROM client WHERE role=1';
+			$stmt = DB::connect();
+            $con=$stmt->query($query);
+			$employe = $con->fetchAll();
+			return $employe;
+		// }catch(PDOException $ex){
+		// 	echo 'erreur' . $ex->getMessage();
+		// }
+	}
+    static public function login($data){
+		$name = $data['name'];
+			try{$query = 'SELECT * FROM client WHERE full_name=:username';
+			$stmt = DB::connect()->prepare($query);
+			$stmt->execute(array(":username" => $name));
+			$user = $stmt->fetch(PDO::FETCH_OBJ);
+			return $user;
+		}catch(PDOException $ex){
+			echo 'erreur' . $ex->getMessage();
+		}
+	}
 
    static public function getall(){
         $con= DB::connect()->prepare('SELECT * FROM client');
@@ -20,6 +55,21 @@ class Client{
         return $con->fetchAll();
    } 
    static public function addClient($data){
+    $con= DB::connect()->prepare('INSERT INTO client(full_name,adresse,email,role,password) VALUES (:name,:adresse,:email,:role,:password)');
+    $con->bindParam(':name',$data['name']); 
+    $con->bindParam(':adresse',$data['adresse']); 
+    $con->bindParam(':email',$data['email']); 
+    $con->bindParam(':role',$data['role']); 
+    $con->bindParam(':password',$data['password']); 
+     if($con->execute()){
+         return 'ok';
+     }else{
+         return 'error';
+     }
+     $con= null;
+      
+   }
+   static public function register($data){
     $con= DB::connect()->prepare('INSERT INTO client(full_name,adresse,email,role,password) VALUES (:name,:adresse,:email,:role,:password)');
     $con->bindParam(':name',$data['name']); 
     $con->bindParam(':adresse',$data['adresse']); 

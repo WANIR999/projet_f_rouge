@@ -5,10 +5,6 @@
 	}else{
         Redirect::to('displayproduct');
     }
-	if(isset($_POST['submit'])){
-		$oldproduct = new productController();
-		$oldproduct->updateproducts();
-	}
 ?>
 <div class="container">
 	<div class="row my-4">
@@ -21,7 +17,6 @@
 					</a>
 					<form method="post">
 						<div class="form-group">
-                        <input type="hidden" name="id" value="<?php echo $product->id;?>">
 							<label for="nom">Full name</label>
 							<input type="text" name="name" value="<?php echo $product->name;?>" class="form-control" placeholder="Name">
 						</div>
@@ -32,9 +27,6 @@
 						<div class="form-group">
 							<label for="depart">description*</label>
 							<input type="text" name="desc" value="<?php echo $product->description;?>" class="form-control" placeholder="description">
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary" name="submit">add</button>
 						</div>
 					</form>
 				</div>

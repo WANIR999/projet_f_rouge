@@ -7,7 +7,7 @@
     }
 	if(isset($_POST['submit'])){
 		$oldClient = new ClientController();
-		$oldClient->updateclients();
+		$oldClient->updateprofil();
 	}
 ?>
 <div class="container">
@@ -16,7 +16,7 @@
 			<div class="card">
 				<div class="card-header">Add  client</div>
 				<div class="card-body bg-light">
-					<a href="<?php echo BASE_URL;?>displayclient" class="btn btn-sm btn-secondary mr-2 mb-2">
+					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
 					<form method="post">
@@ -35,10 +35,10 @@
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="text" name="password" value="<?php echo $client->password;?>" class="form-control" placeholder="password">
+							<input type="text" name="password"  class="form-control" placeholder="password">
 						</div>
 						<div class="form-group">
-							<select class="form-control" name="role">
+							<select class="form-control mt-2" name="role">
 								<option  value="1" <?php echo $client->role ? 'selected' : ''; ?>>buyer</option>
 								<option value="0" <?php echo !$client->role ? 'selected' : ''; ?> >seller</option>
 							</select>

@@ -17,6 +17,7 @@ class paymentController{
         if(isset($_POST['submit'])){
             $data= array(
                 'name'=>$_POST['name'],
+                'price'=>$_POST['price'],
                 'date'=>$_POST['date'],
             );
             $result= payment::addpayment($data);
@@ -28,12 +29,41 @@ class paymentController{
             }
         }
     }
+    public function getuserpayment(){
+		if(isset($_SESSION['userid'])){
+			$data = array(
+				'id' =>$_SESSION['userid']
+			);
+			$client = payment::getuserpayment($data);
+			return $client;
+		}
+	}
+    public function creatpayments(){
+        if(isset($_POST['submit'])){
+            $data= array(
+                'name'=>$_POST['name'],
+                'idprod'=>$_POST['id'],
+                'price'=>$_POST['price'],
+                'idbuyer'=>$_POST['buyerid'],
+                'idseller'=>$_POST['sellerid'],
+                'date'=>$_POST['date'],
+            );
+            $result= payment::addpayment($data);
+            if($result === 'ok'){
+                Session::set('success','payment ajoute');
+                Redirect::to('productpub');
+            }else{
+                echo $result;
+            }
+        }
+    }
 
     public function updatepayments(){
         if(isset($_POST['submit'])){
             $data= array(
                 'id'=>$_POST['id'],
                 'name'=>$_POST['name'],
+                'price'=>$_POST['price'],
                 'date'=>$_POST['date'],
             );
             $result= payment::updatepayment($data);
