@@ -98,7 +98,7 @@ $clients= $data->getAllClient();
        <div class="d-flex justify-content-between align-items-center mt-2 mx-auto" style=" width:95%;  border: 1px solid grey; border-radius: 10px;">
           <img class="ms-2 pt-2" style="width:40px; height:40px;" src="./image/undraw_male_avatar_323b.svg" alt="img">
           <h6 class="text-secondary"><?php echo $client['full_name'];?></h6>
-          <form method="post" action="updateclient">
+          <form method="post" action="clientcard">
 					<input type="hidden" name="id" value="<?php echo $client['id'];?>">
 					<button style="width:30px; height:30px;" class="btn btn-primary mx-2 d-flex justify-content-center align-items-center"><i class="fa fa-eye"></i></button>
 					</form>

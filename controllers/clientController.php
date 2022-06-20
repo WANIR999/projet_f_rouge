@@ -120,9 +120,8 @@ class ClientController{
                 'adresse'=>$_POST['adresse'],
                 'email'=>$_POST['email'],
                 'password'=>$password,
-                'role'=>$_POST['role'],
             );
-            $_SESSION['role']=$_POST['role'];
+            $_SESSION['username']=$_POST['name'];
             $result= client::updateClient($data);
             if($result === 'ok'){
                 Session::set('success','updated profil');

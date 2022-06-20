@@ -1,4 +1,5 @@
 <?php
+
 if($_SESSION['role']=='2'){
     require_once './view/dashboardadmin.php';
 }

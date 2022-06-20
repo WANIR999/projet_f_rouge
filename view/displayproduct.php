@@ -1,10 +1,14 @@
-<?php if(isset($_POST['find'])){
+<?php if($_SESSION['role'] == 2){
+	$data= new productController();
+	$products= $data->getallproducts();
+}
+else{if(isset($_POST['find'])){
 		$data = new productController();
 		$products = $data->findproducts();
 	}else{
 		$data= new productController();
         $products= $data->getuserproduct();
-	}
+	}}
  ?>
   <div class="mx-auto" style="height:550px; width:95%;">
 	<div class="row my-4">

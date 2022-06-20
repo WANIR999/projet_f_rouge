@@ -86,12 +86,11 @@ class Client{
    }
 
    static public function updateClient($data){
-    $con= DB::connect()->prepare('UPDATE client SET full_name=:name, adresse=:adresse, email=:email, role=:role, password=:password  WHERE id=:id');
+    $con= DB::connect()->prepare('UPDATE client SET full_name=:name, adresse=:adresse, email=:email, password=:password  WHERE id=:id');
     $con->bindParam(':id',$data['id']); 
     $con->bindParam(':name',$data['name']); 
     $con->bindParam(':adresse',$data['adresse']); 
     $con->bindParam(':email',$data['email']); 
-    $con->bindParam(':role',$data['role']); 
     $con->bindParam(':password',$data['password']); 
      if($con->execute())
      {

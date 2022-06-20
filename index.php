@@ -7,20 +7,27 @@
   $home= new HomeController();
  if(isset($_GET['page'])){
   if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
-    $pages= ['home','addclient','updateclient','deleteclient','displayclient','addproduct','updateproduct','deleteproduct','displayproduct','updatepayment','deletepayment','displaypayment','dashboardadmin','dashboardclient','productvue','login','logout','signup','productpub','creatpayment','updateprofil'];
+    $pages= ['home','addclient','updateclient','deleteclient','displayclient','addproduct','updateproduct','deleteproduct','displayproduct','updatepayment','deletepayment','displaypayment','productvue','login','logout','signup','productpub','creatpayment','updateprofil','clientcard'];
       if(in_array($_GET['page'],$pages)){
                 $page=$_GET['page'];
                 $home->index($page);
         }else{
           include('./view/includes/404.php');
         }}else{
-          $pages= ['login','signup'];
+          $pages= ['login','signup','landing'];
           if(in_array($_GET['page'],$pages)){
             $page=$_GET['page'];
             $home->index($page);
     }else{
       include('./view/includes/404.php');
     }
+        }
+      }else{
+        if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
+        $page='home';
+        $home->index($page);}else{
+          $page='login';
+          $home->index($page);
         }
       }
 ?> 

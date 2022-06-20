@@ -14,22 +14,34 @@ if(!$_SESSION['role'] == 2){ Redirect::to('home');}
 					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
-					<form method="post">
+					<form method="post" class="needs-validation" novalidate >
 						<div class="form-group">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" class="form-control" placeholder="Name">
+							<input type="text" name="name" class="form-control" placeholder="Name" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="prenom">adresse*</label>
-							<input type="text" name="adresse" class="form-control" placeholder="adresse">
+							<input type="text" name="adresse" class="form-control" placeholder="adresse" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="mat">email*</label>
-							<input type="text" name="email" class="form-control" placeholder="email">
+							<input type="text" name="email" class="form-control" placeholder="email" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="text" name="password" class="form-control" placeholder="password">
+							<input type="password" name="password" class="form-control" placeholder="password" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="role">

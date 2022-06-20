@@ -13,19 +13,28 @@
 					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
-					<form method="post">
+					<form method="post" class="needs-validation" novalidate>
 						<div class="form-group">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" class="form-control" placeholder="Name">
+							<input type="text" name="name" class="form-control" placeholder="Name" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">price*</label>
-							<input type="text" name="price" class="form-control" placeholder="price">
+							<input type="text" name="price" class="form-control" placeholder="price" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
-							<input type="hidden" name="seller" value="<?php echo $_SESSION['userid'];?>" class="form-control" placeholder="password">
+							<input type="hidden" name="seller" value="<?php echo $_SESSION['userid'];?>" class="form-control" placeholder="password" >
 						<div class="form-group">
 							<label for="depart">description*</label>
-							<input type="text" name="desc" class="form-control" placeholder="description">
+							<input type="text" name="desc" class="form-control" placeholder="description" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">add</button>

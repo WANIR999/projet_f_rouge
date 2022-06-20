@@ -33,9 +33,6 @@
 							<label for="mat">email*</label>
 							<input type="text" name="email" value="<?php echo $client->email;?>" class="form-control" placeholder="email">
 						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary" name="submit">add</button>
-						</div>
 					</form>
 				</div>
 			</div>

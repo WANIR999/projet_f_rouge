@@ -19,22 +19,31 @@
 					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
-					<form method="post">
+					<form method="post" class="needs-validation" novalidate>
 						<div class="form-group">
                         <input type="hidden" name="id" value="<?php echo $product->id;?>">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" value="<?php echo $product->name;?>" class="form-control" placeholder="Name">
+							<input type="text" name="name" value="<?php echo $product->name;?>" class="form-control" placeholder="Name" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">price*</label>
-							<input type="text" name="price" value="<?php echo $product->price;?>" class="form-control" placeholder="price">
+							<input type="text" name="price" value="<?php echo $product->price;?>" class="form-control" placeholder="price" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">description*</label>
-							<input type="text" name="desc" value="<?php echo $product->description;?>" class="form-control" placeholder="description">
+							<input type="text" name="desc" value="<?php echo $product->description;?>" class="form-control" placeholder="description" required>
+							<div class="invalid-feedback">
+							not valid
+							</div>
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary" name="submit">add</button>
+							<button type="submit" class="btn btn-primary" name="submit">update</button>
 						</div>
 					</form>
 				</div>
