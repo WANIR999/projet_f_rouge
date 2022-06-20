@@ -16,14 +16,14 @@
 					<form method="post" class="needs-validation" novalidate>
 						<div class="form-group">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" class="form-control" placeholder="Name" required>
+							<input type="text" name="name" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" class="form-control" placeholder="Name" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">price*</label>
-							<input type="text" name="price" class="form-control" placeholder="price" required>
+							<input type="text" name="price" class="form-control" pattern="[0-9]" placeholder="price" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
@@ -31,7 +31,7 @@
 							<input type="hidden" name="seller" value="<?php echo $_SESSION['userid'];?>" class="form-control" placeholder="password" >
 						<div class="form-group">
 							<label for="depart">description*</label>
-							<input type="text" name="desc" class="form-control" placeholder="description" required>
+							<input type="text" name="desc" pattern="(?=.{8,30}$)" class="form-control" placeholder="description" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

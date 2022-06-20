@@ -17,28 +17,28 @@ if(!$_SESSION['role'] == 2){ Redirect::to('home');}
 					<form method="post" class="needs-validation" novalidate >
 						<div class="form-group">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" class="form-control" placeholder="Name" required>
+							<input type="text" name="name" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" class="form-control" placeholder="Name" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="prenom">adresse*</label>
-							<input type="text" name="adresse" class="form-control" placeholder="adresse" required>
+							<input type="text" name="adresse" class="form-control" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" placeholder="adresse" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="mat">email*</label>
-							<input type="text" name="email" class="form-control" placeholder="email" required>
+							<input type="text" name="email" class="form-control" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" placeholder="email" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="password" name="password" class="form-control" placeholder="password" required>
+							<input type="password" name="password" class="form-control" pattern="(?=.{8,20}$)" placeholder="password" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

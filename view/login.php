@@ -9,14 +9,14 @@
 					<form method="post" class="mx-auto maxw2 needs-validation" novalidate style="width:90%;">
 						<div class="form-group">
 							<label for="nom">Full name</label>
-							<input type="text" name="name" class="form-control" placeholder="Name" required>
+							<input type="text" name="name" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" class="form-control" placeholder="Name" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="text" name="password" class="form-control" placeholder="password" required>
+							<input type="text" name="password" pattern="(?=.{8,20}$)" class="form-control" placeholder="password" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

@@ -23,14 +23,14 @@
 						<div class="form-group">
                         <input type="hidden" name="id" value="<?php echo $payment->id;?>">
 							<label for="nom">product name</label>
-							<input type="text" name="name" value="<?php echo $payment->product;?>" class="form-control" placeholder="Name" required>
+							<input type="text" name="name" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" value="<?php echo $payment->product;?>" class="form-control" placeholder="Name" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="prenom">price</label>
-							<input type="text" name="price" value="<?php echo $payment->price;?>" class="form-control" placeholder="price" required>
+							<input type="text" name="price" pattern="[0-9]" value="<?php echo $payment->price;?>" class="form-control" placeholder="price" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

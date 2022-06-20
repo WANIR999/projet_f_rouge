@@ -24,7 +24,7 @@ if(!$_SESSION['role'] == 1){ Redirect::to('home');}
 					<form method="post" class="needs-validation" novalidate>
 						<div class="form-group">
 							<label for="nom">product</label>
-							<input type="text" name="name" value="<?php echo $product->name;?>" class="form-control" placeholder="Name">
+							<input type="text" name="name" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" value="<?php echo $product->name;?>" class="form-control" placeholder="Name">
 							<div class="invalid-feedback">
 							not valid
 							</div>
@@ -34,7 +34,7 @@ if(!$_SESSION['role'] == 1){ Redirect::to('home');}
 						</div>
 						<div class="form-group">
 							<label for="prenom">price</label>
-							<input type="text" name="price" value="<?php echo $product->price;?>" class="form-control" placeholder="price">
+							<input type="text" name="price" pattern="[0-9]" value="<?php echo $product->price;?>" class="form-control" placeholder="price">
 							<div class="invalid-feedback">
 							not valid
 							</div>
