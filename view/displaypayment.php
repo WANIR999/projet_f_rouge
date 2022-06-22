@@ -54,10 +54,6 @@ if($_SESSION['role'] == 1 or $_SESSION['role'] == 0 ){if(isset($_POST['find'])){
 						      		<input type="hidden" name="id" value="<?php echo $payment['id'];?>">
 						      		<button class="btn btn-sm btn-primary ms-1"><i class="fa fa-edit"></i></button>
 						      	</form>
-						      	<form method="post" class="mr-1" action="deleteclient">
-						      		<input type="hidden" name="id" value="<?php echo $client['id'];?>">
-						      		<button class="btn btn-sm btn-danger ms-1"><i class="fa fa-trash"></i></button>
-						      	</form>
 								  <?php }?>
 						      </td>
 						    </tr>

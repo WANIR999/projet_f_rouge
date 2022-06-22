@@ -26,7 +26,7 @@
         if(isset($_SESSION['logged']) && $_SESSION['logged']==true){
         $page='home';
         $home->index($page);}else{
-          $page='login';
+          $page='landing';
           $home->index($page);
         }
       }

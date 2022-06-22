@@ -23,14 +23,14 @@
 						<div class="form-group">
                         <input type="hidden" name="id" value="<?php echo $client->id;?>" >
 							<label for="nom">Full name</label>
-							<input type="text" name="name" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" value="<?php echo $client->full_name;?>" class="form-control" placeholder="Name" required>
+							<input type="text" name="name" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*"  value="<?php echo $client->full_name;?>" class="form-control" placeholder="Name" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="prenom">adresse*</label>
-							<input type="text" name="adresse" pattern="(?=.{8,20}$)[a-zA-Z0-9._]" value="<?php echo $client->adresse;?>" class="form-control" placeholder="adresse" required>
+							<input type="text" name="adresse" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*" value="<?php echo $client->adresse;?>" class="form-control" placeholder="adresse" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
@@ -44,7 +44,7 @@
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="text" name="password" pattern="(?=.{8,20}$)" value="<?php echo $client->password;?>" class="form-control" placeholder="password" required>
+							<input type="password" name="password" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*" value="<?php echo $client->password;?>" class="form-control" placeholder="password" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

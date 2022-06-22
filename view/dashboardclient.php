@@ -36,6 +36,15 @@ $clients=count($clinum);
          <div class="col mmt">
            <div class="card" style="border-radius:10px; background-color: #f7f7f7;">
              <div class="card-body">
+               <h5 class="card-title text-center  text-secondary">sellers</h5>
+               <p class="card-text fs-5 text-center"><?php echo $clients;?></p>
+               <a href="<?php echo BASE_URL;?>displayclient" class="btn btn-secondary w-100">sellers</a>
+             </div>
+           </div>
+         </div>
+         <div class="col mmt">
+           <div class="card" style="border-radius:10px; background-color: #f7f7f7;">
+             <div class="card-body">
                
                <h5 class="card-title text-center  text-secondary">payments</h5>
                <p class="card-text fs-5 text-center"><?php echo $payments;?></p>
@@ -46,7 +55,7 @@ $clients=count($clinum);
          <div class="col mmt">
            <div class="card" style="border-radius:10px; background-color: #f7f7f7;">
              <div class="card-body">
-               <h5 class="card-title text-center text-secondary">products list</h5>
+               <h5 class="card-title text-center text-secondary">products</h5>
                <p class="card-text fs-5 text-center"><?php echo $products;?></p>
                <a href="<?php echo BASE_URL;?>displayproduct" class="btn btn-secondary w-100">products</a>
              </div>
@@ -72,13 +81,12 @@ $clients=count($clinum);
      </div>
 
       <div class="w-100 mt-3 maxw nbrd  mmt  mrgb" style=" overflow: scroll; overflow-x: hidden; height:240px; border: solid 1px grey; border-radius: 10px;">
-       <h3 class="text-center text-secondary">bought product</h3>
-       <?php foreach($paynum as $product):?>
+       <h3 class="text-center text-secondary">Products list</h3>
+       <?php foreach($prodnum as $product):?>
        <div class="d-flex justify-content-between align-items-center mt-2 mx-auto" style=" width:95%;  border: 1px solid grey; border-radius: 10px;">
-          <img class="ms-2 pt-2" style="width:40px; height:40px;" src="./image/undraw_male_avatar_323b.svg" alt="img">
-          <h6 class="text-secondary"> <?php echo $product['product'];?></h6>
+          <h6 class="text-secondary"> <?php echo $product['name'];?></h6>
           <form method="post" action="productvue">
-					<input type="hidden" name="id" value="<?php echo $product['idproduct'];?>">
+					<input type="hidden" name="id" value="<?php echo $product['id'];?>">
 					<button style="width:30px; height:30px;" class="btn btn-primary mx-2 d-flex justify-content-center align-items-center"><i class="fa fa-eye"></i></button>
 					</form>
        </div>

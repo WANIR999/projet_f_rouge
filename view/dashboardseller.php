@@ -73,7 +73,6 @@ $clients=count($clinum);
        <h3 class="text-center text-secondary">Products list</h3>
        <?php foreach($prodnum as $product) :?>
        <div class="d-flex justify-content-between align-items-center mt-2 mx-auto" style=" width:95%;  border: 1px solid grey; border-radius: 10px;">
-          <img class="ms-2 pt-2" style="width:40px; height:40px;" src="./image/undraw_male_avatar_323b.svg" alt="img">
           <h6 class="text-secondary"><?php echo $product['name']?></h6>
           <form method="post" action="productvue">
 					<input type="hidden" name="id" value="<?php echo $product['id'];?>">

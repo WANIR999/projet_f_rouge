@@ -6,9 +6,9 @@ class ClientController{
 				'id' => $_POST['id']
 			);
 			$client = client::getclient($data);
-			return $client;
+			return $client;}
 		}
-	}
+        
     public function authent(){
 		if(isset($_POST['submit'])){
 			$data = array(
@@ -73,13 +73,17 @@ class ClientController{
     public function signup(){
         if(isset($_POST['submit'])){
             $password= password_hash($_POST['password'],PASSWORD_DEFAULT);
+            $filetmp=$_FILES['image']['tmp_name'];
+            $filename=$_FILES['image']['name'];
             $data= array(
                 'name'=>$_POST['name'],
                 'adresse'=>$_POST['adresse'],
                 'email'=>$_POST['email'],
                 'password'=>$password,
+                'image'=>$filename,
                 'role'=>$_POST['role'],
             );
+            move_uploaded_file( $filetmp,'view/asset/image/'. $filename);
             $result= client::addClient($data);
             if($result === 'ok'){
                 Session::set('success','created account please login');
@@ -157,5 +161,4 @@ class ClientController{
 		session_destroy();
         redirect::to('login');
 	}
-
 }

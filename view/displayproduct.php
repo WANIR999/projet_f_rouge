@@ -1,6 +1,9 @@
 <?php if($_SESSION['role'] == 2){
-	$data= new productController();
-	$products= $data->getallproducts();
+	if(isset($_POST['find'])){
+		$data = new productController();
+		$products = $data->findproducts();}
+	else{$data= new productController();
+	$products= $data->getallproducts();}
 }
 else{if(isset($_POST['find'])){
 		$data = new productController();
@@ -48,7 +51,7 @@ else{if(isset($_POST['find'])){
 						      <th scope="row"><?php echo $product['price']; ?>dh</th>
 						      <th scope="row"><?php echo $product['description']; ?></th>
                               <td class="d-flex flex-row">
-							  <?php if($_SESSION['role'] == 2){?>
+							  <?php if($_SESSION['role'] == 2 or $_SESSION['role'] == 0 ){?>
                               <form method="post" class="mr-1" action="updateproduct">
 						      		<input type="hidden" name="id" value="<?php echo $product['id'];?>">
 						      		<button class="btn btn-sm btn-primary ms-1"><i class="fa fa-edit"></i></button>

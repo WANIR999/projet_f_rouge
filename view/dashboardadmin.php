@@ -96,7 +96,7 @@ $clients= $data->getAllClient();
        <h3 class="text-center text-secondary">Users list</h3>
        <?php foreach($clients as $client):?>
        <div class="d-flex justify-content-between align-items-center mt-2 mx-auto" style=" width:95%;  border: 1px solid grey; border-radius: 10px;">
-          <img class="ms-2 pt-2" style="width:40px; height:40px;" src="./image/undraw_male_avatar_323b.svg" alt="img">
+       <img class="w-25 rounded-circle" src="view/asset/image/maleavatar.svg" alt="">
           <h6 class="text-secondary"><?php echo $client['full_name'];?></h6>
           <form method="post" action="clientcard">
 					<input type="hidden" name="id" value="<?php echo $client['id'];?>">
