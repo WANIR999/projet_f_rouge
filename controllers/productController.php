@@ -39,6 +39,28 @@ class productController{
             }
         }
     }
+    public function creatprod(){
+        if(isset($_POST['submit'])){
+            $pic=$_FILES["image"]["name"];
+            $pictmp=$_FILES["image"]["tmp_name"];
+            move_uploaded_file($pictmp,'./view/asset/image/'.$pic);
+            $data= array(
+                'name'=>$_POST['name'],
+                'price'=>$_POST['price'],
+                'desc'=>$_POST['desc'],
+                'seller'=>$_POST['seller'],
+                'image'=>$pic,
+                
+            );
+            $result= product::creatproduct($data);
+            if($result === 'ok'){
+                Session::set('success','produit ajoute');
+                Redirect::to('displayproduct');
+            }else{
+                echo $result;
+            }
+        }
+    }
 
     public function updateproducts(){
         if(isset($_POST['submit'])){
@@ -62,6 +84,18 @@ class productController{
 		if(isset($_POST['id'])){
 			$data['id'] = $_POST['id'];
 			$result = product::deleteproduct($data);
+			if($result === 'ok'){
+                Session::set('success','produit Supprimé');
+                Redirect::to('displayproduct');
+			}else{
+				echo $result;
+			}
+		}
+	}
+    public function deleteuserproducts(){
+		if(isset($_POST['id'])){
+			$data['id'] = $_POST['id'];
+			$result = product::deleteuserproduct($data);
 			if($result === 'ok'){
                 Session::set('success','produit Supprimé');
                 Redirect::to('displayproduct');

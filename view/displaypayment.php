@@ -24,7 +24,7 @@ if($_SESSION['role'] == 1 or $_SESSION['role'] == 0 ){if(isset($_POST['find'])){
               <div>
                     <a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-primary mr-2 mb-2"><i class="fas fa-home"></i>
                     </a>
-                    <a href="<?php echo BASE_URL;?>logout" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
+                    <a href="<?php echo BASE_URL;?>home" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
 						<i class="fas fa-user mr-2"> <?php ?></i>
 					</a>
               </div>
@@ -53,6 +53,10 @@ if($_SESSION['role'] == 1 or $_SESSION['role'] == 0 ){if(isset($_POST['find'])){
 									<form method="post" class="mr-1" action="updatepayment">
 						      		<input type="hidden" name="id" value="<?php echo $payment['id'];?>">
 						      		<button class="btn btn-sm btn-primary ms-1"><i class="fa fa-edit"></i></button>
+						      	</form>
+								  <form method="post" class="mr-1" action="deletepayment">
+						      		<input type="hidden" name="id" value="<?php echo $payment['id'];?>">
+						      		<button class="btn btn-sm btn-danger ms-1"><i class="fa fa-trash"></i></button>
 						      	</form>
 								  <?php }?>
 						      </td>

@@ -14,12 +14,9 @@
                 <h3 class="text-secondary text-center" >Client list</h3>
                <div class="w-100 d-flex justify-content-between">
               <div>
-              <?php if($_SESSION['role'] == 2){?>
-              <a href="<?php echo BASE_URL;?>addclient" class="btn btn-sm btn-secondary mr-2 mb-2"><i class="fas fa-plus"></i></a>
-			  <?php }?>
                     <a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-primary mr-2 mb-2"><i class="fas fa-home"></i>
                     </a>
-                    <a href="<?php echo BASE_URL;?>logout" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
+                    <a href="<?php echo BASE_URL;?>home" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
 						<i class="fas fa-user mr-2"> <?php ?></i>
 					</a>
               </div>

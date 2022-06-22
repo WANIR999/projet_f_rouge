@@ -46,6 +46,21 @@ class product{
      $con= null;
       
    }
+   static public function creatproduct($data){
+    $con= DB::connect()->prepare('INSERT INTO product (name,price,description,id_seller,image) VALUES (:name,:price,:desc,:seller,:image)');
+    $con->bindParam(':name',$data['name']); 
+    $con->bindParam(':price',$data['price']); 
+    $con->bindParam(':desc',$data['desc']); 
+    $con->bindParam(':seller',$data['seller']); 
+    $con->bindParam(':image',$data['image']); 
+     if($con->execute()){
+         return 'ok';
+     }else{
+         return 'error';
+     }
+     $con= null;
+      
+   }
 
    static public function updateproduct($data){
     $con= DB::connect()->prepare('UPDATE product SET name=:name, price=:price, description=:desc WHERE id=:id');
@@ -65,6 +80,19 @@ class product{
     $id = $data['id'];
     try{
         $query = 'DELETE FROM product WHERE id=:id';
+        $con = DB::connect()->prepare($query);
+        $con->execute(array(":id" => $id));
+        if($con->execute()){
+            return 'ok';
+        }
+    }catch(PDOException $ex){
+        echo 'erreur' . $ex->getMessage();
+    }
+}
+   static public function deleteuserproduct($data){
+    $id = $data['id'];
+    try{
+        $query = 'DELETE FROM product WHERE id_seller=:id';
         $con = DB::connect()->prepare($query);
         $con->execute(array(":id" => $id));
         if($con->execute()){

@@ -18,7 +18,7 @@
          <?php foreach($products as $product):?>
          <div class="col mmt">
          <div class="card mx-auto my-2" style="width:200px; height:300px; border-radius:15px;">
-        <img src="./view/asset/image/product.png" class="card-img-top" style="height:40%;border-radius:15px;" alt="img">
+        <img src="./view/asset/image/<?= $product['image'];?>" class="card-img-top" style="height:40%;border-radius:15px;" alt="img">
         <div class="card-body">
         <h5 class="card-title text-center text-secondary"><?php echo$product['name'];?></h5>
         <p class="card-text text-center text-success" style="font-size:15px;"><?php echo$product['price'];?>dh</p>

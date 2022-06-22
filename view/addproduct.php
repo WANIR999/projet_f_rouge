@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_POST['submit'])){
 		$newproduct = new productController();
-		$newproduct->addproducts();
+		$newproduct->creatprod();
 	}
 ?>
 <div class="container">
@@ -13,7 +13,7 @@
 					<a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-secondary mr-2 mb-2">
 						<i class="fas fa-home"></i>
 					</a>
-					<form method="post" class="needs-validation" novalidate>
+					<form method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
 						<div class="form-group">
 							<label for="nom">Full name</label>
 							<input type="text" name="name" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*" class="form-control" placeholder="Name" required>
@@ -35,6 +35,10 @@
 							<div class="invalid-feedback">
 							not valid
 							</div>
+						</div>
+						<div class="form-group">
+							<label for="depart">description*</label>
+							<input type="file" name="image"  class="form-control" >
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">add</button>

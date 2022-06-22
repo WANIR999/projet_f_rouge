@@ -9,7 +9,7 @@ $paynum= $payment->getuserpayment();
 $payments=count($paynum);
 ?>
 <?php
-$client= new clientController;
+$client= new buyerController;
 $clinum= $client->getsellers();
 $clients=count($clinum);
 ?>

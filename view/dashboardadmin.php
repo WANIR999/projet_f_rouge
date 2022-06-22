@@ -7,15 +7,15 @@ $payment= new paymentController;
 $paynum= $payment->getAllpayments();
 $payments=count($paynum);
 
-$client= new clientController;
+$client= new adminController;
 $clinum= $client->getsellers();
 $sellers=count($clinum);
 
-$client= new clientController;
+$client= new adminController;
 $clinum= $client->getbuyers();
 $buyers=count($clinum);
 
-$data= new ClientController();
+$data= new adminController();
 $clients= $data->getAllClient();
 ?>
  

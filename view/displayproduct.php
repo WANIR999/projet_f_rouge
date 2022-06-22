@@ -21,12 +21,9 @@ else{if(isset($_POST['find'])){
                 <h3 class="text-secondary text-center" >products list</h3>
                <div class="w-100 d-flex justify-content-between">
               <div>
-			  <?php if($_SESSION['role'] == 2){?>
-              <a href="<?php echo BASE_URL;?>addproduct" class="btn btn-sm btn-secondary mr-2 mb-2"><i class="fas fa-plus"></i></a>
-			  <?php }?>
                     <a href="<?php echo BASE_URL;?>home" class="btn btn-sm btn-primary mr-2 mb-2"><i class="fas fa-home"></i>
                     </a>
-                    <a href="<?php echo BASE_URL;?>logout" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
+                    <a href="<?php echo BASE_URL;?>home" title="Déconnexion" class="btn btn-link text-secondary mr-2 mb-2">
 						<i class="fas fa-user mr-2"> <?php ?></i>
 					</a>
               </div>
@@ -51,7 +48,7 @@ else{if(isset($_POST['find'])){
 						      <th scope="row"><?php echo $product['price']; ?>dh</th>
 						      <th scope="row"><?php echo $product['description']; ?></th>
                               <td class="d-flex flex-row">
-							  <?php if($_SESSION['role'] == 2 or $_SESSION['role'] == 0 ){?>
+							  <?php if( $_SESSION['role'] == 0 ){?>
                               <form method="post" class="mr-1" action="updateproduct">
 						      		<input type="hidden" name="id" value="<?php echo $product['id'];?>">
 						      		<button class="btn btn-sm btn-primary ms-1"><i class="fa fa-edit"></i></button>
