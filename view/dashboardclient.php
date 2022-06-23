@@ -23,7 +23,7 @@ $clients=count($clinum);
       <div class="d-flex justify-content-between  tocol torow2 mmarg">
        <div class=" ms-2 d-flex justify-content-between maxw mmarg hello hei widthmed widthsm " style="width: 60%; height: 130px; border-radius: 12px; border: 2px solid #e7eaf6; background-color:#D8DBF0;">
            <h3 class=" text-secondary  mt-3 ms-3 ">Hello <?php echo $_SESSION['username'];?></h3>
-           <img class="remove" src="./view/asset/image/undraw_hello_re_3evm.svg" alt="IMG" style="height:130%;" >   
+           <img class="remove" src="./view/asset/image/maleavatar.svg" alt="IMG" style="height:130%;" >   
          </div>
        <div class=" ms-2 d-flex justify-content-between flex-column maxw mmt  widthmed widthmedi center" style="width: 60%; border-radius: 12px; border: 2px solid #e7eaf6; background-color:#D8DBF0;">
            <h4 class=" text-secondary mt-3 ms-3 mmt font">login date:</h4> 
@@ -33,15 +33,6 @@ $clients=count($clinum);
       <!-- ****************************************************** -->
       <div class="w-100 ms-2 mmarg mdl ">
        <div class="row mt-5 pt-2 mmt mdl">
-         <div class="col mmt">
-           <div class="card" style="border-radius:10px; background-color: #f7f7f7;">
-             <div class="card-body">
-               <h5 class="card-title text-center  text-secondary">sellers</h5>
-               <p class="card-text fs-5 text-center"><?php echo $clients;?></p>
-               <a href="<?php echo BASE_URL;?>displayclient" class="btn btn-secondary w-100">sellers</a>
-             </div>
-           </div>
-         </div>
          <div class="col mmt">
            <div class="card" style="border-radius:10px; background-color: #f7f7f7;">
              <div class="card-body">

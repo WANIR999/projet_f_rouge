@@ -1,4 +1,6 @@
-<?php if(isset($_POST['find'])){
+<?php 
+if(!$_SESSION['role'] == 2){ Redirect::to('home');}
+if(isset($_POST['find'])){
 		$data = new clientController();
 		$clients = $data->findclient();
 	}else{

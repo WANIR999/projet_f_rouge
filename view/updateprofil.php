@@ -44,7 +44,7 @@
 						</div>
 						<div class="form-group">
 							<label for="depart">password*</label>
-							<input type="text" name="password" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*"   class="form-control" placeholder="password" required>
+							<input type="password" name="password" pattern="^([^a-zA-Z]*[A-Za-z]){4}[\s\S]*"   class="form-control" placeholder="password" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>

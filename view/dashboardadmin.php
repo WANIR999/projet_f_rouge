@@ -81,7 +81,7 @@ $clients= $data->getAllClient();
     <!-- *********************** -->
     <div class="ms-4 mt-3 d-flex flex-column maxw mmarg nbrd mdl" style="width: 250px; height:550px;border-radius: 10px; border: solid 1px grey;">
      <div class="card remove " style="border-radius: 10px;">
-       <img src="./view/asset/image/undraw_male_avatar_323b.svg" class="card-img-top mx-auto mt-3 rounded-circle w-50 h-50" alt="...">
+       <img src="./view/asset/image/maleavatar.svg" class="card-img-top mx-auto mt-3 rounded-circle w-50 h-50" alt="...">
        <div class="card-body">
          <h5 class="card-title text-center text-secondary"><?php echo $_SESSION['username'];?></h5>
          <p class="card-text text-center text-secondary"><?php echo $_SESSION['role'] == 1 ? 'buyer' : ($_SESSION['role'] == 2 ? 'admin' : ($_SESSION['role'] == 0 ? 'seller' : ''));?></p>

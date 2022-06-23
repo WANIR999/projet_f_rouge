@@ -51,7 +51,7 @@ class paymentController{
             $result= payment::addpayment($data);
             if($result === 'ok'){
                 Session::set('success','payment ajoute');
-                Redirect::to('paypro');
+                Redirect::to('productpub');
             }else{
                 echo $result;
             }

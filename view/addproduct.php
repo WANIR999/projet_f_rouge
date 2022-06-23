@@ -1,4 +1,5 @@
 <?php 
+if(!$_SESSION['role'] == 0){ Redirect::to('home');}
 	if(isset($_POST['submit'])){
 		$newproduct = new productController();
 		$newproduct->creatprod();

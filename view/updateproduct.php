@@ -37,7 +37,7 @@
 						</div>
 						<div class="form-group">
 							<label for="depart">description*</label>
-							<input type="text" name="desc" pattern="(?=.{8,30}$)" value="<?php echo $product->description;?>" class="form-control" placeholder="description" required>
+							<input type="text" name="desc" pattern="^([^a-zA-Z0-9]*[A-Za-z0-9]){4}[\s\S]*" value="<?php echo $product->description;?>" class="form-control" placeholder="description" required>
 							<div class="invalid-feedback">
 							not valid
 							</div>
